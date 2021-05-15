@@ -59,11 +59,11 @@ function FormikExample() {
                       }
                       isRequired
                     >
-                      <FormLabel htmlFor="nameFurigana">フリガナ</FormLabel>
+                      <FormLabel htmlFor="nameFurigana">氏名【カナ】</FormLabel>
                       <Input
                         {...field}
                         id="nameFurigana"
-                        placeholder="フリガナ"
+                        placeholder="氏名【カナ】"
                       />
                       <FormErrorMessage>
                         {form.errors.nameFurigana}
