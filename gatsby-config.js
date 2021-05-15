@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: "gatsby-questionnaire",
+    title: "gatsby-questionnaire"
   },
-  plugins: ["gatsby-plugin-postcss", "gatsby-plugin-react-helmet"],
+  plugins: [
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-react-helmet",
+    "@chakra-ui/gatsby-plugin"
+  ]
 };
