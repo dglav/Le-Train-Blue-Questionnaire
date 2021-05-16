@@ -8,7 +8,7 @@ import {
 import { Field } from "formik";
 import SelectNumber from "../atoms/SelectNumber";
 
-const BirthdateInput = ({ formProps }) => {
+const BirthdateField = ({ formProps }) => {
   return (
     <Field name="birthdate">
       {({ field, form }) => {
@@ -66,4 +66,4 @@ const BirthdateInput = ({ formProps }) => {
   );
 };
 
-export default BirthdateInput;
+export default BirthdateField;

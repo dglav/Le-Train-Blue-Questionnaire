@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input, Center, Stack, Flex } from "@chakra-ui/react";
+import { Button, Input, Center, Stack } from "@chakra-ui/react";
 import {
   FormControl,
   FormLabel,
@@ -7,16 +7,10 @@ import {
 } from "@chakra-ui/form-control";
 import { Formik, Form, Field } from "formik";
 import Header from "../components/organisms/Header";
-import BirthdateInput from "../components/molecules/BirthdateInput";
+import NameFields from "../components/molecules/NameFields";
+import BirthdateInput from "../components/molecules/BirthdateField";
 
 function FormikExample() {
-  function validateNameFurigana(value) {
-    return !value && "名前のフリガナが必須の項目です";
-  }
-  function validateName(value) {
-    return !value && "名前が必須の項目です";
-  }
-
   return (
     <>
       <Header />
@@ -39,38 +33,7 @@ function FormikExample() {
           {props => (
             <Form>
               <Stack spacing="3" w="500px">
-                <Field name="name" validate={validateName}>
-                  {({ field, form }) => (
-                    <FormControl
-                      isInvalid={form.errors.name && form.touched.name}
-                      isRequired
-                    >
-                      <FormLabel htmlFor="name">氏名</FormLabel>
-                      <Input {...field} id="name" placeholder="氏名" />
-                      <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                    </FormControl>
-                  )}
-                </Field>
-                <Field name="nameFurigana" validate={validateNameFurigana}>
-                  {({ field, form }) => (
-                    <FormControl
-                      isInvalid={
-                        form.errors.nameFurigana && form.touched.nameFurigana
-                      }
-                      isRequired
-                    >
-                      <FormLabel htmlFor="nameFurigana">氏名【カナ】</FormLabel>
-                      <Input
-                        {...field}
-                        id="nameFurigana"
-                        placeholder="氏名【カナ】"
-                      />
-                      <FormErrorMessage>
-                        {form.errors.nameFurigana}
-                      </FormErrorMessage>
-                    </FormControl>
-                  )}
-                </Field>
+                <NameFields />
                 <BirthdateInput formProps={props} />
                 <Field name="address">
                   {({ field, form }) => (
