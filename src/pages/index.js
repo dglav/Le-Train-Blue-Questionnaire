@@ -1,8 +1,7 @@
 import React from "react";
 // import emailjs from "emailjs-com";
-import Body from "../components/Body";
+import Body from "../components/atoms/Body";
 import Header from "../components/organisms/Header";
-import ExamList from "../components/molecules/ExamList";
 
 // emailjs.init("user_YR6zwq0eqeK819WMTB5G9");
 
@@ -28,7 +27,6 @@ const IndexPage = () => {
   return (
     <Body>
       <Header />
-      <ExamList />
     </Body>
   );
 };
