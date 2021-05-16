@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/form-control";
 import { Field } from "formik";
 
-const NameFields = () => {
+const AddressFields = () => {
   return (
     <>
       <Field name="address">
@@ -40,4 +40,4 @@ const NameFields = () => {
   );
 };
 
-export default NameFields;
+export default AddressFields;
