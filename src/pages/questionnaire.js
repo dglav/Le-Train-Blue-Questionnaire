@@ -6,6 +6,7 @@ import NameFields from "../components/molecules/NameFields";
 import BirthdateInput from "../components/molecules/BirthdateField";
 import AddressFields from "../components/molecules/AddressFields";
 import PhoneNumberFields from "../components/molecules/PhoneNumerFields";
+import EmailField from "../components/molecules/EmailField";
 
 function FormikExample() {
   return (
@@ -20,7 +21,8 @@ function FormikExample() {
             address: "",
             addressFurigana: "",
             homePhoneNumber: "",
-            cellPhoneNumber: ""
+            cellPhoneNumber: "",
+            email: ""
           }}
           onSubmit={(values, actions) => {
             setTimeout(() => {
@@ -36,6 +38,7 @@ function FormikExample() {
                 <BirthdateInput formProps={props} />
                 <AddressFields />
                 <PhoneNumberFields />
+                <EmailField />
                 <Button
                   mt={4}
                   colorScheme="blue"
