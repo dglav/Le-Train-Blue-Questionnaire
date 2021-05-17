@@ -8,7 +8,7 @@ import {
 import { Field } from "formik";
 import SelectNumber from "../atoms/SelectNumber";
 
-const BirthdateField = ({ formProps }) => {
+const BirthdateField = () => {
   return (
     <Field name="birthdate">
       {({ field, form }) => {
@@ -19,14 +19,14 @@ const BirthdateField = ({ formProps }) => {
             isRequired
           >
             <FormLabel htmlFor="birthdate">生年月日</FormLabel>
-            <Flex>
+            <Flex id="birthdate">
               <SelectNumber
                 firstNumber={1900}
                 lastNumber={2021}
                 placeholder="年"
                 value={year}
                 onChange={value =>
-                  formProps.setFieldValue(field.name, {
+                  form.setFieldValue(field.name, {
                     ...field.value,
                     year: value
                   })
@@ -38,7 +38,7 @@ const BirthdateField = ({ formProps }) => {
                 placeholder="月"
                 value={month}
                 onChange={value =>
-                  formProps.setFieldValue(field.name, {
+                  form.setFieldValue(field.name, {
                     ...field.value,
                     month: value
                   })
@@ -51,7 +51,7 @@ const BirthdateField = ({ formProps }) => {
                 placeholder="日"
                 value={day}
                 onChange={value =>
-                  formProps.setFieldValue(field.name, {
+                  form.setFieldValue(field.name, {
                     ...field.value,
                     day: value
                   })

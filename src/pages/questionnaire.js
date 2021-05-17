@@ -42,13 +42,12 @@ function FormikExample() {
             <Form>
               <Stack spacing="3" w="500px">
                 <NameFields />
-                <BirthdateInput formProps={props} />
+                <BirthdateInput />
                 <AddressFields />
                 <PhoneNumberFields />
                 <EmailField />
-                <WorkFields formProps={props} />
+                <WorkFields />
                 <TextMessagePermissionField />
-
                 <Button
                   mt={4}
                   colorScheme="blue"

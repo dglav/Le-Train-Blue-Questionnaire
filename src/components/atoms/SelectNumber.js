@@ -15,7 +15,6 @@ const SelectNumber = ({
 
   return (
     <Select
-      id="year"
       value={value}
       placeholder={placeholder}
       onChange={e => onChange(e.target.value)}
