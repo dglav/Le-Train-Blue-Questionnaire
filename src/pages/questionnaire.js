@@ -5,7 +5,7 @@ import Header from "../components/organisms/Header";
 import NameFields from "../components/molecules/NameFields";
 import BirthdateInput from "../components/molecules/BirthdateField";
 import AddressFields from "../components/molecules/AddressFields";
-import PhoneNumberFields from "../components/molecules/PhoneNumerFields";
+import PhoneNumberFields from "../components/molecules/PhoneNumberFields";
 import EmailField from "../components/molecules/EmailField";
 
 function FormikExample() {
