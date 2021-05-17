@@ -8,6 +8,7 @@ import AddressFields from "../components/molecules/AddressFields";
 import PhoneNumberFields from "../components/molecules/PhoneNumberFields";
 import EmailField from "../components/molecules/EmailField";
 import WorkFields from "../components/molecules/WorkFields";
+import TextMessagePermissionField from "../components/molecules/TextMessagePermissionField";
 
 function FormikExample() {
   return (
@@ -25,7 +26,10 @@ function FormikExample() {
             cellPhoneNumber: "",
             email: "",
             placeOfWork: "",
-            industry: ""
+            industry: "",
+            hasPermissionToDM: "",
+            contactMethod: "",
+            contactMethodOther: ""
           }}
           onSubmit={(values, actions) => {
             setTimeout(() => {
@@ -43,11 +47,14 @@ function FormikExample() {
                 <PhoneNumberFields />
                 <EmailField />
                 <WorkFields formProps={props} />
+                <TextMessagePermissionField />
+
                 <Button
                   mt={4}
                   colorScheme="blue"
                   isLoading={props.isSubmitting}
                   type="submit"
+                  onClick={() => console.log({ ...props.values })}
                 >
                   Submit
                 </Button>
