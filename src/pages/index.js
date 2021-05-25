@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 // import emailjs from "emailjs-com";
-import Body from "../components/atoms/Body";
-import Header from "../components/organisms/Header";
+import PersonalInfoPage from "./personalinfo";
 
 // emailjs.init("user_YR6zwq0eqeK819WMTB5G9");
 
@@ -24,10 +23,24 @@ import Header from "../components/organisms/Header";
 // }
 
 const IndexPage = () => {
+  const [values, setValues] = useState({});
+  const [pageNumber, setPageNumber] = useState(1);
+
+  console.log({ values });
+  console.log({ pageNumber });
+
   return (
-    <Body>
-      <Header />
-    </Body>
+    <>
+      {pageNumber === 1 && (
+        <PersonalInfoPage
+          onSubmit={data => {
+            console.log(data);
+            setValues({ personalInfo: data });
+            setPageNumber(2);
+          }}
+        />
+      )}
+    </>
   );
 };
 

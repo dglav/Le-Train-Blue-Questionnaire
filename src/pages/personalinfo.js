@@ -10,7 +10,7 @@ import EmailField from "../components/molecules/EmailField";
 import WorkFields from "../components/molecules/WorkFields";
 import TextMessagePermissionField from "../components/molecules/TextMessagePermissionField";
 
-function PersonalInfoForm() {
+function PersonalInfoForm({ onSubmit }) {
   return (
     <>
       <Header />
@@ -35,11 +35,12 @@ function PersonalInfoForm() {
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
               actions.setSubmitting(false);
+              onSubmit(values);
             }, 1000);
           }}
         >
           {props => (
-            <Form>
+            <Form onSubmit={props.handleSubmit}>
               <Stack spacing="3" w="500px">
                 <NameFields />
                 <BirthdateInput />
@@ -53,7 +54,6 @@ function PersonalInfoForm() {
                   colorScheme="blue"
                   isLoading={props.isSubmitting}
                   type="submit"
-                  onClick={() => console.log({ ...props.values })}
                 >
                   Submit
                 </Button>
