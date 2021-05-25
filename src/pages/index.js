@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import emailjs from "emailjs-com";
 import PersonalInfoPage from "./personalinfo";
+import QuestionnairePage1 from "./questionnaire/page1";
 
 // emailjs.init("user_YR6zwq0eqeK819WMTB5G9");
 
@@ -26,9 +27,6 @@ const IndexPage = () => {
   const [values, setValues] = useState({});
   const [pageNumber, setPageNumber] = useState(1);
 
-  console.log({ values });
-  console.log({ pageNumber });
-
   return (
     <>
       {pageNumber === 1 && (
@@ -40,6 +38,7 @@ const IndexPage = () => {
           }}
         />
       )}
+      {pageNumber === 2 && <QuestionnairePage1 />}
     </>
   );
 };
