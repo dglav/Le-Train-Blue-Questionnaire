@@ -29,7 +29,7 @@ const IndexPage = () => {
 
   return (
     <>
-      {pageNumber === 1 && (
+      {pageNumber === 0 && (
         <PersonalInfoPage
           onSubmit={data => {
             console.log(data);
@@ -38,7 +38,14 @@ const IndexPage = () => {
           }}
         />
       )}
-      {pageNumber === 2 && <QuestionnairePage1 />}
+      {pageNumber === 1 && (
+        <QuestionnairePage1
+          onSubmit={data => {
+            console.log(data);
+            setValues({ page1: data });
+          }}
+        />
+      )}
     </>
   );
 };
