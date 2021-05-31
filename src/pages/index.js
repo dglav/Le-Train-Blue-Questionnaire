@@ -1,48 +1,56 @@
 import React, { useState } from "react";
-// import emailjs from "emailjs-com";
 import PersonalInfoPage from "./personalinfo";
 import QuestionnairePage1 from "./questionnaire/page1";
-
-// emailjs.init("user_YR6zwq0eqeK819WMTB5G9");
-
-// function sendEmail(blob) {
-//   emailjs
-//     .send("default_service", "template_c5ua2zl", {
-//       to_name: "toDrew",
-//       from_name: "fromDrew",
-//       message: "hi drew!",
-//       content: blob
-//     })
-//     .then(
-//       result => {
-//         console.log(result.text);
-//       },
-//       error => {
-//         console.log(error.text);
-//       }
-//     );
-// }
+import QuestionnairePage2 from "./questionnaire/page2";
+import QuestionnairePage3 from "./questionnaire/page3";
 
 const IndexPage = () => {
-  const [values, setValues] = useState({});
+  const [questionnaireState, setQuestionnaireState] = useState({});
   const [pageNumber, setPageNumber] = useState(1);
 
   return (
     <>
       {pageNumber === 0 && (
         <PersonalInfoPage
+          questionnaireState={questionnaireState}
           onSubmit={data => {
-            console.log(data);
-            setValues({ personalInfo: data });
-            setPageNumber(2);
+            setQuestionnaireState({ ...questionnaireState, ...data });
+            setPageNumber(pageNumber => pageNumber + 1);
           }}
         />
       )}
       {pageNumber === 1 && (
         <QuestionnairePage1
+          questionnaireState={questionnaireState}
           onSubmit={data => {
-            console.log(data);
-            setValues({ page1: data });
+            setQuestionnaireState({ ...questionnaireState, ...data });
+            setPageNumber(pageNumber => pageNumber + 1);
+          }}
+          handleGoToPreviousPage={data => {
+            setQuestionnaireState({ ...questionnaireState, ...data });
+            setPageNumber(pageNumber => pageNumber - 1);
+          }}
+        />
+      )}
+      {pageNumber === 2 && (
+        <QuestionnairePage2
+          questionnaireState={questionnaireState}
+          onSubmit={data => {
+            setQuestionnaireState({ ...questionnaireState, ...data });
+            setPageNumber(pageNumber => pageNumber + 1);
+          }}
+          handleGoToPreviousPage={data => {
+            setQuestionnaireState({ ...questionnaireState, ...data });
+            setPageNumber(pageNumber => pageNumber - 1);
+          }}
+        />
+      )}
+      {pageNumber === 3 && (
+        <QuestionnairePage3
+          questionnaireState={questionnaireState}
+          handleGoToPreviousPage={data => {
+            setQuestionnaireState({ ...questionnaireState, ...data });
+            setPageNumber(pageNumber => pageNumber - 1);
           }}
         />
       )}

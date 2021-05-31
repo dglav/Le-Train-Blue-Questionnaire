@@ -12,10 +12,7 @@ const AddressFields = () => {
     <>
       <Field name="address">
         {({ field, form }) => (
-          <FormControl
-            isInvalid={form.errors.address && form.touched.address}
-            isRequired
-          >
+          <FormControl isInvalid={form.errors.address && form.touched.address}>
             <FormLabel htmlFor="address">住所</FormLabel>
             <Input {...field} id="address" placeholder="住所" />
             <FormErrorMessage>{form.errors.address}</FormErrorMessage>
@@ -28,7 +25,6 @@ const AddressFields = () => {
             isInvalid={
               form.errors.addressFurigana && form.touched.addressFurigana
             }
-            isRequired
           >
             <FormLabel htmlFor="addressFurigana">住所【カナ】</FormLabel>
             <Input {...field} id="addressFurigana" placeholder="住所【カナ】" />

@@ -16,7 +16,6 @@ const BirthdateField = () => {
         return (
           <FormControl
             isInvalid={form.errors.birthdate && form.touched.birthdate}
-            isRequired
           >
             <FormLabel htmlFor="birthdate">生年月日</FormLabel>
             <Flex id="birthdate">

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Center, Stack } from "@chakra-ui/react";
+import { Center, Stack } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
 import Header from "../components/organisms/Header";
 import NameFields from "../components/molecules/NameFields";
@@ -9,15 +9,16 @@ import PhoneNumberFields from "../components/molecules/PhoneNumberFields";
 import EmailField from "../components/molecules/EmailField";
 import WorkFields from "../components/molecules/WorkFields";
 import TextMessagePermissionField from "../components/molecules/TextMessagePermissionField";
+import FormNavigationButtons from "../components/molecules/FormNavigationButtons";
 
-function PersonalInfoForm({ onSubmit }) {
+function PersonalInfoForm({ questionnaireState, onSubmit, goToPreviousPage }) {
   return (
     <>
       <Header />
       <Center m="8">
         <Formik
           initialValues={{
-            nameFurigana: "",
+            nameFurigana: questionnaireState.nameFurigana,
             name: "",
             birthdate: { year: undefined, month: undefined, day: undefined },
             address: "",
@@ -35,7 +36,7 @@ function PersonalInfoForm({ onSubmit }) {
             setTimeout(() => {
               actions.setSubmitting(false);
               onSubmit(values);
-            }, 1000);
+            }, 200);
           }}
         >
           {props => (
@@ -48,14 +49,11 @@ function PersonalInfoForm({ onSubmit }) {
                 <EmailField />
                 <WorkFields />
                 <TextMessagePermissionField />
-                <Button
-                  mt={4}
-                  colorScheme="blue"
+                <FormNavigationButtons
+                  onSubmit={onSubmit}
+                  goToPreviousPage={goToPreviousPage}
                   isLoading={props.isSubmitting}
-                  type="submit"
-                >
-                  Submit
-                </Button>
+                />
               </Stack>
             </Form>
           )}

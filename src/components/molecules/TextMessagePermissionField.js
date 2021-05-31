@@ -23,7 +23,6 @@ const TextMessagePermissionField = () => {
             isInvalid={
               form.errors.hasPermissionToDM && form.touched.hasPermissionToDM
             }
-            isRequired
           >
             <FormLabel htmlFor="hasPermissionToDM">DM</FormLabel>
             <Select
