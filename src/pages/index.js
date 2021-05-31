@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import PersonalInfoPage from "./personalinfo";
-import QuestionnairePage1 from "./questionnaire/page1";
-import QuestionnairePage2 from "./questionnaire/page2";
-import QuestionnairePage3 from "./questionnaire/page3";
-import QuestionnairePage4 from "./questionnaire/page4";
+import PersonalInfoPage from "../form-pages/personalinfo";
+import QuestionnairePage1 from "../form-pages/page1";
+import QuestionnairePage2 from "../form-pages/page2";
+import QuestionnairePage3 from "../form-pages/page3";
+import QuestionnairePage4 from "../form-pages/page4";
 
 const IndexPage = () => {
   const [questionnaireState, setQuestionnaireState] = useState({});

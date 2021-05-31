@@ -1,32 +1,32 @@
 import React from "react";
 import { Center, Stack } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
-import Header from "../../components/Header";
-import FormNavigationButtons from "../../components/FormNavigationButtons";
+import Header from "../components/Header";
+import FormNavigationButtons from "../components/FormNavigationButtons";
+import ReasonForUsingField from "../fields/ReasonForUsingField";
 
-function Page4({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
+function Page1({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
   return (
     <>
       <Header />
       <Center m="8">
         <Formik
           initialValues={{
-            hasHairRemovalTrialExperience:
-              questionnaireState.hasHairRemovalTrialExperience,
-            trialExperienceSalonName:
-              questionnaireState.trialExperienceSalonName
+            reasonForUsingThisSalon: questionnaireState.reasonForUsingThisSalon,
+            introducedBy: questionnaireState.introducedBy
           }}
           onSubmit={(values, actions) => {
             setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
               actions.setSubmitting(false);
               onSubmit(values);
-            }, 1000);
+            }, 200);
           }}
         >
           {props => (
             <Form onSubmit={props.handleSubmit}>
-              <Stack spacing="3" w="500px"></Stack>
+              <Stack spacing="3" w="500px">
+                <ReasonForUsingField />
+              </Stack>
               <FormNavigationButtons
                 onSubmit={onSubmit}
                 handleGoToPreviousPage={handleGoToPreviousPage}
@@ -41,4 +41,4 @@ function Page4({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
   );
 }
 
-export default Page4;
+export default Page1;

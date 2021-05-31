@@ -1,9 +1,9 @@
 import React from "react";
 import { Center, Stack } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
-import Header from "../../components/Header";
-import FormNavigationButtons from "../../components/FormNavigationButtons";
-import HasHairRemovalExperienceField from "../../fields/HasHairRemovalExperienceField";
+import Header from "../components/Header";
+import FormNavigationButtons from "../components/FormNavigationButtons";
+import HasHairRemovalExperienceField from "../fields/HasHairRemovalExperienceField";
 
 function Page2({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { Center, Stack } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
-import Header from "../../components/Header";
-import FormNavigationButtons from "../../components/FormNavigationButtons";
+import Header from "../components/Header";
+import FormNavigationButtons from "../components/FormNavigationButtons";
 
 function Page3({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
   return (
