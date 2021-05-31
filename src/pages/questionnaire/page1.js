@@ -1,12 +1,11 @@
 import React from "react";
 import { Center, Stack } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
-import Header from "../../components/organisms/Header";
-import FormNavigationButtons from "../../components/molecules/FormNavigationButtons";
-import ReasonForUsingField from "../../components/molecules/ReasonForUsingField";
+import Header from "../../components/Header";
+import FormNavigationButtons from "../../components/FormNavigationButtons";
+import ReasonForUsingField from "../../fields/ReasonForUsingField";
 
 function Page1({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
-  console.log({ handleGoToPreviousPage });
   return (
     <>
       <Header />

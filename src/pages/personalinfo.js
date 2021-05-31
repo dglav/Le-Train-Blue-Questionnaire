@@ -1,15 +1,15 @@
 import React from "react";
 import { Center, Stack } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
-import Header from "../components/organisms/Header";
-import NameFields from "../components/molecules/NameFields";
-import BirthdateInput from "../components/molecules/BirthdateField";
-import AddressFields from "../components/molecules/AddressFields";
-import PhoneNumberFields from "../components/molecules/PhoneNumberFields";
-import EmailField from "../components/molecules/EmailField";
-import WorkFields from "../components/molecules/WorkFields";
-import TextMessagePermissionField from "../components/molecules/TextMessagePermissionField";
-import FormNavigationButtons from "../components/molecules/FormNavigationButtons";
+import Header from "../components/Header";
+import NameFields from "../fields/NameFields";
+import BirthdateInput from "../fields/BirthdateField";
+import AddressFields from "../fields/AddressFields";
+import PhoneNumberFields from "../fields/PhoneNumberFields";
+import EmailField from "../fields/EmailField";
+import WorkFields from "../fields/WorkFields";
+import TextMessagePermissionField from "../fields/TextMessagePermissionField";
+import FormNavigationButtons from "../components/FormNavigationButtons";
 
 function PersonalInfoForm({ questionnaireState, onSubmit, goToPreviousPage }) {
   return (

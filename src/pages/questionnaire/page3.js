@@ -1,18 +1,31 @@
 import React from "react";
 import { Center, Stack } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
-import Header from "../../components/organisms/Header";
-import FormNavigationButtons from "../../components/molecules/FormNavigationButtons";
+import Header from "../../components/Header";
+import FormNavigationButtons from "../../components/FormNavigationButtons";
 
-function Page3({ onSubmit, handleGoToPreviousPage }) {
+function Page3({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
   return (
     <>
       <Header />
       <Center m="8">
         <Formik
           initialValues={{
-            hasHairRemovalTrialExperience: "",
-            trialExperienceSalonName: ""
+            previousHairRemovalMethod:
+              questionnaireState.previousHairRemovalMethod,
+            previousHairRemovalLocation:
+              questionnaireState.previousHairRemovalLocation,
+            previousHairRemovalTimePeriodStart:
+              questionnaireState.previousHairRemovalTimePeriodStart,
+            previousHairRemovalTimePeriodFinish:
+              questionnaireState.previousHairRemovalTimePeriodFinish,
+            previousHairRemovalTimePeriodCount:
+              questionnaireState.previousHairRemovalTimePeriodCount,
+            previousHairRemovalCurrentSituation:
+              questionnaireState.previousHairRemovalCurrentSituation,
+            previousHairRemovalCost: questionnaireState.previousHairRemovalCost,
+            previousHairRemovalImpression:
+              questionnaireState.previousHairRemovalImpression
           }}
           onSubmit={(values, actions) => {
             setTimeout(() => {

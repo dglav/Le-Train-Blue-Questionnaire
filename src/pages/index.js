@@ -3,6 +3,7 @@ import PersonalInfoPage from "./personalinfo";
 import QuestionnairePage1 from "./questionnaire/page1";
 import QuestionnairePage2 from "./questionnaire/page2";
 import QuestionnairePage3 from "./questionnaire/page3";
+import QuestionnairePage4 from "./questionnaire/page4";
 
 const IndexPage = () => {
   const [questionnaireState, setQuestionnaireState] = useState({});
@@ -47,6 +48,15 @@ const IndexPage = () => {
       )}
       {pageNumber === 3 && (
         <QuestionnairePage3
+          questionnaireState={questionnaireState}
+          handleGoToPreviousPage={data => {
+            setQuestionnaireState({ ...questionnaireState, ...data });
+            setPageNumber(pageNumber => pageNumber - 1);
+          }}
+        />
+      )}
+      {pageNumber === 4 && (
+        <QuestionnairePage4
           questionnaireState={questionnaireState}
           handleGoToPreviousPage={data => {
             setQuestionnaireState({ ...questionnaireState, ...data });

@@ -6,7 +6,7 @@ import {
   FormErrorMessage
 } from "@chakra-ui/form-control";
 import { Field } from "formik";
-import SelectNumber from "../atoms/SelectNumber";
+import SelectNumber from "../components/SelectNumber";
 
 const BirthdateField = () => {
   return (
