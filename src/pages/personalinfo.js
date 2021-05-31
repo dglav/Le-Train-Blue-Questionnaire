@@ -49,12 +49,12 @@ function PersonalInfoForm({ questionnaireState, onSubmit, goToPreviousPage }) {
                 <EmailField />
                 <WorkFields />
                 <TextMessagePermissionField />
-                <FormNavigationButtons
-                  onSubmit={onSubmit}
-                  goToPreviousPage={goToPreviousPage}
-                  isLoading={props.isSubmitting}
-                />
               </Stack>
+              <FormNavigationButtons
+                onSubmit={onSubmit}
+                goToPreviousPage={goToPreviousPage}
+                isLoading={props.isSubmitting}
+              />
             </Form>
           )}
         </Formik>
