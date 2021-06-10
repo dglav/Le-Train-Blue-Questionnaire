@@ -28,13 +28,11 @@ const TextMessagePermissionField = () => {
             <Select
               id="hasPermissionToDM"
               onChange={e => {
-                {
-                  form.setFieldValue(field.name, e.target.value);
-                  const shouldResetChildFields = field.value !== "不可";
-                  if (shouldResetChildFields) {
-                    form.setFieldValue("contactMethod", "");
-                    form.setFieldValue("contactMethodOther", "");
-                  }
+                form.setFieldValue(field.name, e.target.value);
+                const shouldResetChildFields = field.value !== "不可";
+                if (shouldResetChildFields) {
+                  form.setFieldValue("contactMethod", "");
+                  form.setFieldValue("contactMethodOther", "");
                 }
               }}
               value={field.value}

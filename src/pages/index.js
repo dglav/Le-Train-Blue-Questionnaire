@@ -7,7 +7,7 @@ import QuestionnairePage4 from "../form-pages/page4";
 
 const IndexPage = () => {
   const [questionnaireState, setQuestionnaireState] = useState({});
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(3);
 
   return (
     <>

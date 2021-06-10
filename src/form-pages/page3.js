@@ -3,6 +3,15 @@ import { Center, Stack } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
 import Header from "../components/Header";
 import FormNavigationButtons from "../components/FormNavigationButtons";
+// Fields
+import PreviousHairRemovalMethodField from "../fields/PreviousHairRemovalMethodField";
+import PreviousHairRemovalLocationField from "../fields/PreviousHairRemovalLocationField";
+import PreviousHairRemovalTimePeriodStartField from "../fields/previousHairRemovalTimePeriodStartField";
+import PreviousHairRemovalTimePeriodFinishField from "../fields/previousHairRemovalTimePeriodFinishField";
+import PreviousHairRemovalTimePeriodCountField from "../fields/previousHairRemovalTimePeriodCountField";
+import PreviousHairRemovalCurrentSituationField from "../fields/previousHairRemovalCurrentSituationField";
+import PreviousHairRemovalCostField from "../fields/PreviousHairRemovalCostField";
+import PreviousHairRemovalImpressionField from "../fields/PreviousHairRemovalImpressionField";
 
 function Page3({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
   return (
@@ -15,10 +24,14 @@ function Page3({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
               questionnaireState.previousHairRemovalMethod,
             previousHairRemovalLocation:
               questionnaireState.previousHairRemovalLocation,
-            previousHairRemovalTimePeriodStart:
-              questionnaireState.previousHairRemovalTimePeriodStart,
-            previousHairRemovalTimePeriodFinish:
-              questionnaireState.previousHairRemovalTimePeriodFinish,
+            previousHairRemovalTimePeriodStart: questionnaireState.previousHairRemovalTimePeriodStart || {
+              year: undefined,
+              month: undefined
+            },
+            previousHairRemovalTimePeriodFinish: questionnaireState.previousHairRemovalTimePeriodFinish || {
+              year: undefined,
+              month: undefined
+            },
             previousHairRemovalTimePeriodCount:
               questionnaireState.previousHairRemovalTimePeriodCount,
             previousHairRemovalCurrentSituation:
@@ -37,7 +50,16 @@ function Page3({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
         >
           {props => (
             <Form onSubmit={props.handleSubmit}>
-              <Stack spacing="3" w="500px"></Stack>
+              <Stack spacing="3" w="500px">
+                <PreviousHairRemovalMethodField />
+                <PreviousHairRemovalLocationField />
+                <PreviousHairRemovalTimePeriodStartField />
+                <PreviousHairRemovalTimePeriodFinishField />
+                <PreviousHairRemovalTimePeriodCountField />
+                <PreviousHairRemovalCurrentSituationField />
+                <PreviousHairRemovalCostField />
+                <PreviousHairRemovalImpressionField />
+              </Stack>
               <FormNavigationButtons
                 onSubmit={onSubmit}
                 handleGoToPreviousPage={handleGoToPreviousPage}
