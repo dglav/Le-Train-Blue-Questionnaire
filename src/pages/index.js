@@ -49,6 +49,10 @@ const IndexPage = () => {
       {pageNumber === 3 && (
         <QuestionnairePage3
           questionnaireState={questionnaireState}
+          onSubmit={data => {
+            setQuestionnaireState({ ...questionnaireState, ...data });
+            setPageNumber(pageNumber => pageNumber + 1);
+          }}
           handleGoToPreviousPage={data => {
             setQuestionnaireState({ ...questionnaireState, ...data });
             setPageNumber(pageNumber => pageNumber - 1);
@@ -58,6 +62,10 @@ const IndexPage = () => {
       {pageNumber === 4 && (
         <QuestionnairePage4
           questionnaireState={questionnaireState}
+          // onSubmit={data => {
+          //   setQuestionnaireState({ ...questionnaireState, ...data });
+          //   setPageNumber(pageNumber => pageNumber + 1);
+          // }}
           handleGoToPreviousPage={data => {
             setQuestionnaireState({ ...questionnaireState, ...data });
             setPageNumber(pageNumber => pageNumber - 1);

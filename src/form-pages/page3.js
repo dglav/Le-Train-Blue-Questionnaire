@@ -42,10 +42,9 @@ function Page3({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
           }}
           onSubmit={(values, actions) => {
             setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
               actions.setSubmitting(false);
               onSubmit(values);
-            }, 1000);
+            }, 200);
           }}
         >
           {props => (
