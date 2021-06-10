@@ -3,7 +3,7 @@ import { Center, Stack } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
 import Header from "../components/Header";
 import FormNavigationButtons from "../components/FormNavigationButtons";
-import HasHairRemovalExperienceField from "../fields/HasHairRemovalExperienceField";
+import HasHairRemovalExperienceFields from "../fields/HasHairRemovalExperienceFields";
 
 function Page2({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
   return (
@@ -13,7 +13,11 @@ function Page2({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
         <Formik
           initialValues={{
             hasHairRemovalExperience:
-              questionnaireState.hasHairRemovalExperience
+              questionnaireState.hasHairRemovalExperience,
+            hasHairRemovalTrialExperience:
+              questionnaireState.hasHairRemovalTrialExperience,
+            trialExperienceSalonName:
+              questionnaireState.trialExperienceSalonName
           }}
           onSubmit={(values, actions) => {
             setTimeout(() => {
@@ -25,7 +29,7 @@ function Page2({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
           {props => (
             <Form onSubmit={props.handleSubmit}>
               <Stack spacing="3" w="500px">
-                <HasHairRemovalExperienceField />
+                <HasHairRemovalExperienceFields />
               </Stack>
 
               <FormNavigationButtons
