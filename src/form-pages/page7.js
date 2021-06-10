@@ -5,8 +5,6 @@ import {
   Checkbox,
   CheckboxGroup,
   Input,
-  Flex,
-  Text,
   Grid,
   GridItem
 } from "@chakra-ui/react";
@@ -19,7 +17,7 @@ import { Formik, Form, Field } from "formik";
 import Header from "../components/Header";
 import FormNavigationButtons from "../components/FormNavigationButtons";
 
-function Page6({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
+function Page7({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
   return (
     <>
       <Header />
@@ -82,7 +80,7 @@ function Page6({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                           </Grid>
                         </CheckboxGroup>
                         <FormErrorMessage>
-                          {form.errors.menstrualCycleType}
+                          {form.errors.skinType}
                         </FormErrorMessage>
                       </FormControl>
                     );
@@ -142,4 +140,4 @@ function Page6({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
   );
 }
 
-export default Page6;
+export default Page7;
