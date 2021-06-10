@@ -47,7 +47,9 @@ const HasHairRemovalExperienceField = () => {
                 }}
                 flexGrow="1"
                 variant={
-                  !field.value && field.value !== "" ? "solid" : "outline"
+                  !field.value && field.value !== undefined
+                    ? "solid"
+                    : "outline"
                 }
               >
                 いいえ

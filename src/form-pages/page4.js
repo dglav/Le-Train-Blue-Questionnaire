@@ -155,12 +155,12 @@ function Page4({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                           }
                         >
                           <FormLabel htmlFor="ailmentTimePeriod">
-                            氏名
+                            いつ頃？
                           </FormLabel>
                           <Input
                             {...field}
                             id="ailmentTimePeriod"
-                            placeholder="氏名"
+                            placeholder="いつ頃？"
                           />
                           <FormErrorMessage>
                             {form.errors.ailmentTimePeriod}
