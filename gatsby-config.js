@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "gatsby-questionnaire"
+    title: "Le Train Blue Questionnaire"
   },
+  pathPrefix: "/Le-Train-Blue-Questionnaire",
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
