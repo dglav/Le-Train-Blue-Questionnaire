@@ -46,9 +46,7 @@ function Page7({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                           form.errors.skinType && form.touched.skinType
                         }
                       >
-                        <FormLabel htmlFor="skinType">
-                          服用されている、もしくはたまに服用するお薬はありますか？
-                        </FormLabel>
+                        <FormLabel htmlFor="skinType">肌質について</FormLabel>
                         <CheckboxGroup
                           onChange={value => {
                             form.setFieldValue("skinType", value);

@@ -52,7 +52,7 @@ function Page6({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                         }
                       >
                         <FormLabel htmlFor="menstrualCycleType">
-                          服用されている、もしくはたまに服用するお薬はありますか？
+                          月経周期
                         </FormLabel>
                         <ButtonGroup
                           isAttached
