@@ -51,7 +51,7 @@ function Page7({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                           onChange={value => {
                             form.setFieldValue("skinType", value);
                           }}
-                          defaultValue={[]}
+                          defaultValue={field.value || []}
                         >
                           <Grid
                             templateRows="repeat(3, 1fr)"

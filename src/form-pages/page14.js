@@ -63,7 +63,7 @@ function Page14({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                                 undefined
                               );
                           }}
-                          defaultValue={[]}
+                          defaultValue={field.value || []}
                         >
                           <Grid
                             templateRows="repeat(9, 1fr)"

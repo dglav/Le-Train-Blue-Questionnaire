@@ -91,7 +91,7 @@ function Page5({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                   }}
                 </Field>
                 <Field name="medicinePurpose">
-                  {({ form }) => {
+                  {({ field, form }) => {
                     const isMedicinePurposeVisible =
                       form.getFieldProps("isTakingMedicine").value === true;
 
@@ -110,7 +110,7 @@ function Page5({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                             onChange={value => {
                               form.setFieldValue("medicinePurpose", value);
                             }}
-                            defaultValue={[]}
+                            defaultValue={field.value || []}
                           >
                             <Grid
                               templateRows="repeat(3, 1fr)"

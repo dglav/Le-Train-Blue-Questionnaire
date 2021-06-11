@@ -3,7 +3,7 @@ import { Center, Stack } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
 import Header from "../components/Header";
 import NameFields from "../fields/NameFields";
-import BirthdateInput from "../fields/BirthdateField";
+import BirthDateInput from "../fields/BirthDateField";
 import AddressFields from "../fields/AddressFields";
 import PhoneNumberFields from "../fields/PhoneNumberFields";
 import EmailField from "../fields/EmailField";
@@ -18,19 +18,23 @@ function PersonalInfoForm({ questionnaireState, onSubmit, goToPreviousPage }) {
       <Center m="8">
         <Formik
           initialValues={{
-            nameFurigana: questionnaireState.nameFurigana,
-            name: "",
-            birthdate: { year: undefined, month: undefined, day: undefined },
-            address: "",
-            addressFurigana: "",
-            homePhoneNumber: "",
-            cellPhoneNumber: "",
-            email: "",
-            placeOfWork: "",
-            industry: "",
-            hasPermissionToDM: "",
-            contactMethod: "",
-            contactMethodOther: ""
+            nameFurigana: questionnaireState.nameFurigana || "",
+            name: questionnaireState.name || "",
+            birthDate: questionnaireState.birthDate || {
+              year: undefined,
+              month: undefined,
+              day: undefined
+            },
+            address: questionnaireState.address || "",
+            addressFurigana: questionnaireState.addressFurigana || "",
+            homePhoneNumber: questionnaireState.homePhoneNumber || "",
+            cellPhoneNumber: questionnaireState.cellPhoneNumber || "",
+            email: questionnaireState.email || "",
+            placeOfWork: questionnaireState.placeOfWork || "",
+            industry: questionnaireState.industry || "",
+            hasPermissionToDM: questionnaireState.hasPermissionToDM || "",
+            contactMethod: questionnaireState.contactMethod || "",
+            contactMethodOther: questionnaireState.contactMethodOther || ""
           }}
           onSubmit={(values, actions) => {
             setTimeout(() => {
@@ -43,7 +47,7 @@ function PersonalInfoForm({ questionnaireState, onSubmit, goToPreviousPage }) {
             <Form onSubmit={props.handleSubmit}>
               <Stack spacing="3" w="500px">
                 <NameFields />
-                <BirthdateInput />
+                <BirthDateInput />
                 <AddressFields />
                 <PhoneNumberFields />
                 <EmailField />

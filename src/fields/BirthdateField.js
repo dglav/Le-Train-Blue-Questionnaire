@@ -8,17 +8,17 @@ import {
 import { Field } from "formik";
 import SelectNumber from "../components/SelectNumber";
 
-const BirthdateField = () => {
+const BirthDateField = () => {
   return (
-    <Field name="birthdate">
+    <Field name="birthDate">
       {({ field, form }) => {
         const { year, month, day } = field.value;
         return (
           <FormControl
-            isInvalid={form.errors.birthdate && form.touched.birthdate}
+            isInvalid={form.errors.birthDate && form.touched.birthDate}
           >
-            <FormLabel htmlFor="birthdate">生年月日</FormLabel>
-            <Flex id="birthdate">
+            <FormLabel htmlFor="birthDate">生年月日</FormLabel>
+            <Flex id="birthDate">
               <SelectNumber
                 firstNumber={1900}
                 lastNumber={2021}
@@ -57,7 +57,7 @@ const BirthdateField = () => {
                 }
               />
             </Flex>
-            <FormErrorMessage>{form.errors.birthdate}</FormErrorMessage>
+            <FormErrorMessage>{form.errors.birthDate}</FormErrorMessage>
           </FormControl>
         );
       }}
@@ -65,4 +65,4 @@ const BirthdateField = () => {
   );
 };
 
-export default BirthdateField;
+export default BirthDateField;
