@@ -9,16 +9,17 @@ import { Formik, Form, Field } from "formik";
 import Header from "../components/Header";
 import FormNavigationButtons from "../components/FormNavigationButtons";
 
-function Page9({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
+function Page10({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
   return (
     <>
       <Header />
       <Center m="8">
         <Formik
           initialValues={{
-            hasHadARash: questionnaireState.hasHadARash,
-            rashTimePeriod: questionnaireState.rashTimePeriod,
-            rashCondition: questionnaireState.rashCondition
+            hasHadARashFromEthanolDisinfectant:
+              questionnaireState.hasHadARashFromEthanolDisinfectant,
+            ethanolDisinfectantRashLocation:
+              questionnaireState.ethanolDisinfectantRashLocation
           }}
           onSubmit={(values, actions) => {
             setTimeout(() => {
@@ -30,16 +31,17 @@ function Page9({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
           {props => (
             <Form onSubmit={props.handleSubmit}>
               <Stack spacing="3" w="500px">
-                <Field name="hasHadARash">
+                <Field name="hasHadARashFromEthanolDisinfectant">
                   {({ field, form }) => {
                     return (
                       <FormControl
                         isInvalid={
-                          form.errors.hasHadARash && form.touched.hasHadARash
+                          form.errors.hasHadARashFromEthanolDisinfectant &&
+                          form.touched.hasHadARashFromEthanolDisinfectant
                         }
                       >
-                        <FormLabel htmlFor="hasHadARash">
-                          かぶれの経験はありますか？
+                        <FormLabel htmlFor="hasHadARashFromEthanolDisinfectant">
+                          エタノール消毒でかぶれたことはありますか？
                         </FormLabel>
                         <ButtonGroup
                           isAttached
@@ -49,7 +51,10 @@ function Page9({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                         >
                           <Button
                             onClick={() =>
-                              form.setFieldValue("hasHadARash", true)
+                              form.setFieldValue(
+                                "hasHadARashFromEthanolDisinfectant",
+                                true
+                              )
                             }
                             flexGrow="1"
                             variant={field.value ? "solid" : "outline"}
@@ -58,8 +63,14 @@ function Page9({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                           </Button>
                           <Button
                             onClick={() => {
-                              form.setFieldValue("hasHadARash", false);
-                              form.setFieldValue("rashTimePeriod", undefined);
+                              form.setFieldValue(
+                                "hasHadARashFromEthanolDisinfectant",
+                                false
+                              );
+                              form.setFieldValue(
+                                "ethanolDisinfectantRashLocation",
+                                undefined
+                              );
                               form.setFieldValue("rashCondition", undefined);
                             }}
                             flexGrow="1"
@@ -73,61 +84,36 @@ function Page9({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                           </Button>
                         </ButtonGroup>
                         <FormErrorMessage>
-                          {form.errors.hasHadARash}
+                          {form.errors.hasHadARashFromEthanolDisinfectant}
                         </FormErrorMessage>
                       </FormControl>
                     );
                   }}
                 </Field>
-                <Field name="rashTimePeriod">
+                <Field name="ethanolDisinfectantRashLocation">
                   {({ form, field }) => {
                     const isMedicinePurposeVisible =
-                      form.getFieldProps("hasHadARash").value === true;
+                      form.getFieldProps("hasHadARashFromEthanolDisinfectant")
+                        .value === true;
 
                     return (
                       isMedicinePurposeVisible && (
                         <FormControl
                           isInvalid={
-                            form.errors.rashTimePeriod &&
-                            form.touched.rashTimePeriod
+                            form.errors.ethanolDisinfectantRashLocation &&
+                            form.touched.ethanolDisinfectantRashLocation
                           }
                         >
-                          <FormLabel htmlFor="rashTimePeriod">いつ？</FormLabel>
-                          <Input
-                            {...field}
-                            id="rashTimePeriod"
-                            placeholder="いつ"
-                          />
-                          <FormErrorMessage>
-                            {form.errors.rashTimePeriod}
-                          </FormErrorMessage>
-                        </FormControl>
-                      )
-                    );
-                  }}
-                </Field>
-                <Field name="rashCondition">
-                  {({ field, form }) => {
-                    const isMedicineNameVisible =
-                      form.getFieldProps("hasHadARash").value === true;
-                    return (
-                      isMedicineNameVisible && (
-                        <FormControl
-                          isInvalid={
-                            form.errors.rashCondition &&
-                            form.touched.rashCondition
-                          }
-                        >
-                          <FormLabel htmlFor="rashCondition">
-                            状況は？
+                          <FormLabel htmlFor="ethanolDisinfectantRashLocation">
+                            箇所は？
                           </FormLabel>
                           <Input
                             {...field}
-                            id="rashCondition"
-                            placeholder="状況"
+                            id="ethanolDisinfectantRashLocation"
+                            placeholder="箇所"
                           />
                           <FormErrorMessage>
-                            {form.errors.rashCondition}
+                            {form.errors.ethanolDisinfectantRashLocation}
                           </FormErrorMessage>
                         </FormControl>
                       )
@@ -149,4 +135,4 @@ function Page9({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
   );
 }
 
-export default Page9;
+export default Page10;
