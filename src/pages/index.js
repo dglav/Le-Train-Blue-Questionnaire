@@ -204,7 +204,6 @@ const IndexPage = () => {
           questionnaireState={questionnaireState}
           onSubmit={data => {
             setQuestionnaireState({ ...questionnaireState, ...data });
-            setPageNumber(pageNumber => pageNumber + 1);
           }}
           handleGoToPreviousPage={data => {
             setQuestionnaireState({ ...questionnaireState, ...data });
