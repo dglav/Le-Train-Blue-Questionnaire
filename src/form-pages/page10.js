@@ -56,7 +56,7 @@ function Page10({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                                 true
                               )
                             }
-                            flexGrow="1"
+                            width="50%"
                             variant={field.value ? "solid" : "outline"}
                           >
                             はい
@@ -73,7 +73,7 @@ function Page10({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                               );
                               form.setFieldValue("rashCondition", undefined);
                             }}
-                            flexGrow="1"
+                            width="50%"
                             variant={
                               !field.value && field.value !== undefined
                                 ? "solid"

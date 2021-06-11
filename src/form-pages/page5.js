@@ -62,7 +62,7 @@ function Page5({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                             onClick={() =>
                               form.setFieldValue("isTakingMedicine", true)
                             }
-                            flexGrow="1"
+                            width="50%"
                             variant={field.value ? "solid" : "outline"}
                           >
                             はい
@@ -73,7 +73,7 @@ function Page5({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                               form.setFieldValue("medicinePurpose", undefined);
                               form.setFieldValue("medicineName", undefined);
                             }}
-                            flexGrow="1"
+                            width="50%"
                             variant={
                               !field.value && field.value !== undefined
                                 ? "solid"

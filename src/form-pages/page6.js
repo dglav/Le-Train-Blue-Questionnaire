@@ -71,7 +71,7 @@ function Page6({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                                 }
                               );
                             }}
-                            flexGrow="1"
+                            width="33.333%"
                             variant={
                               field.value === "順調" ? "solid" : "outline"
                             }
@@ -86,7 +86,7 @@ function Page6({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                                 undefined
                               );
                             }}
-                            flexGrow="1"
+                            width="33.333%"
                             variant={
                               field.value === "不順" ? "solid" : "outline"
                             }
@@ -108,7 +108,7 @@ function Page6({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                                 }
                               );
                             }}
-                            flexGrow="1"
+                            width="33.333%"
                             variant={
                               field.value === "閉経" ? "solid" : "outline"
                             }

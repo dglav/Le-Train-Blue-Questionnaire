@@ -14,13 +14,13 @@ const FormNavigationButtons = ({
           colorScheme="blue"
           isLoading={isLoading}
           type="submit"
-          flexGrow={1}
+          width="50%"
         >
           確定
         </Button>
       )}
       {handleGoToPreviousPage && (
-        <Button onClick={() => handleGoToPreviousPage(values)} flexGrow={1}>
+        <Button onClick={() => handleGoToPreviousPage(values)} width="50%">
           もどる
         </Button>
       )}

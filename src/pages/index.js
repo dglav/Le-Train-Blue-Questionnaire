@@ -12,10 +12,11 @@ import QuestionnairePage9 from "../form-pages/page9";
 import QuestionnairePage10 from "../form-pages/page10";
 import QuestionnairePage11 from "../form-pages/page11";
 import QuestionnairePage12 from "../form-pages/page12";
+import QuestionnairePage13 from "../form-pages/page13";
 
 const IndexPage = () => {
   const [questionnaireState, setQuestionnaireState] = useState({});
-  const [pageNumber, setPageNumber] = useState(12);
+  const [pageNumber, setPageNumber] = useState(13);
 
   return (
     <>
@@ -173,6 +174,19 @@ const IndexPage = () => {
       )}
       {pageNumber === 12 && (
         <QuestionnairePage12
+          questionnaireState={questionnaireState}
+          onSubmit={data => {
+            setQuestionnaireState({ ...questionnaireState, ...data });
+            setPageNumber(pageNumber => pageNumber + 1);
+          }}
+          handleGoToPreviousPage={data => {
+            setQuestionnaireState({ ...questionnaireState, ...data });
+            setPageNumber(pageNumber => pageNumber - 1);
+          }}
+        />
+      )}
+      {pageNumber === 13 && (
+        <QuestionnairePage13
           questionnaireState={questionnaireState}
           onSubmit={data => {
             setQuestionnaireState({ ...questionnaireState, ...data });

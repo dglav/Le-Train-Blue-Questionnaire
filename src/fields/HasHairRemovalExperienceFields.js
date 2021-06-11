@@ -31,7 +31,7 @@ const HasHairRemovalExperienceField = () => {
                 onClick={() =>
                   form.setFieldValue("hasHairRemovalExperience", true)
                 }
-                flexGrow="1"
+                width="50%"
                 variant={field.value ? "solid" : "outline"}
               >
                 はい
@@ -45,7 +45,7 @@ const HasHairRemovalExperienceField = () => {
                   );
                   form.setFieldValue("trialExperienceSalonName", undefined);
                 }}
-                flexGrow="1"
+                width="50%"
                 variant={
                   !field.value && field.value !== undefined
                     ? "solid"
@@ -87,7 +87,7 @@ const HasHairRemovalExperienceField = () => {
                     onClick={() =>
                       form.setFieldValue("hasHairRemovalTrialExperience", true)
                     }
-                    flexGrow="1"
+                    width="50%"
                     variant={field.value ? "solid" : "outline"}
                   >
                     はい
@@ -96,7 +96,7 @@ const HasHairRemovalExperienceField = () => {
                     onClick={() =>
                       form.setFieldValue("hasHairRemovalTrialExperience", false)
                     }
-                    flexGrow="1"
+                    width="50%"
                     variant={
                       !field.value && field.value !== "" ? "solid" : "outline"
                     }

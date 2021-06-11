@@ -51,7 +51,7 @@ function Page9({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                             onClick={() =>
                               form.setFieldValue("hasHadARash", true)
                             }
-                            flexGrow="1"
+                            width="50%"
                             variant={field.value ? "solid" : "outline"}
                           >
                             はい
@@ -62,7 +62,7 @@ function Page9({ questionnaireState, onSubmit, handleGoToPreviousPage }) {
                               form.setFieldValue("rashTimePeriod", undefined);
                               form.setFieldValue("rashCondition", undefined);
                             }}
-                            flexGrow="1"
+                            width="50%"
                             variant={
                               !field.value && field.value !== undefined
                                 ? "solid"
