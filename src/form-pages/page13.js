@@ -1,19 +1,6 @@
 import React from "react";
-import {
-  Center,
-  Stack,
-  Button,
-  ButtonGroup,
-  Input,
-  Text,
-  VStack
-} from "@chakra-ui/react";
-import {
-  FormControl,
-  FormLabel,
-  FormErrorMessage
-} from "@chakra-ui/form-control";
-import { Formik, Form, Field } from "formik";
+import { Center, Stack, Text, VStack } from "@chakra-ui/react";
+import { Formik, Form } from "formik";
 import Header from "../components/Header";
 import FormNavigationButtons from "../components/FormNavigationButtons";
 import SelfCareGroup from "../fields/SelfCareGroup";
