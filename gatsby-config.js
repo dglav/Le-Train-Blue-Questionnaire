@@ -3,9 +3,5 @@ module.exports = {
     title: "Le Train Blue Questionnaire"
   },
   pathPrefix: "/Le-Train-Blue-Questionnaire",
-  plugins: [
-    "gatsby-plugin-postcss",
-    "gatsby-plugin-react-helmet",
-    "@chakra-ui/gatsby-plugin"
-  ]
+  plugins: ["gatsby-plugin-react-helmet", "@chakra-ui/gatsby-plugin"]
 };
