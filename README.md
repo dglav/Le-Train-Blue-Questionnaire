@@ -4,51 +4,15 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Le Train Blue Questionnaire
 </h1>
 
-## 🚀 Quick start
+## 🚀 Things I learned
 
-1.  **Create a Gatsby site.**
+1. **Relating to updating packages with regards to the production build**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+It was actually quite hard to get this site to deploy correctly with no bugs on Github Pages.
+This is how I first realized that the production build of my site was broken.
+I think it's quite important that, whenever doing configuration changes at the root of my project, that all the different builds of it, run correctly.
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+Also, I think it's quite important to think about what I want to add to my project ahead of time. If I don't think I will need it right away, it's okay to look up how to add it later. Adding things that I'm not sure I'll need just adds complexity and the chances of something unexpected breaking.
